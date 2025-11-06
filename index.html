@@ -14,9 +14,10 @@
             /* Nova Imagem de Fundo */
             background-image: url('https://img.eselt.de/img/18832510_wwwEFdDndRn3sVxt/ad.jpg');
             background-color: #ffffff; /* Cor de fallback */
-            background-size: cover;
+            /* CORREÇÃO: background-size: contain garante que a imagem inteira caiba na tela, eliminando o zoom indesejado. */
+            background-size: contain; 
+            background-repeat: no-repeat; /* Evita repetição da imagem */
             background-position: center;
-            background-attachment: fixed;
             color: #000;
         }
     </style>
