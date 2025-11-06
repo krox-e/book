@@ -133,6 +133,9 @@
     <div id="message-box" class="fixed bottom-4 left-1/2 -translate-x-1/2 bg-indigo-900 text-white p-4 rounded-lg shadow-lg opacity-0 transition-opacity duration-300 z-50"></div>
 
     <script>
+        // URL de placeholder que carrega perfeitamente, indicando que a capa deve ser substituída
+        const PLACEHOLDER_IMAGE_URL = "https://placehold.co/400x600/1e3a8a/ffffff?text=CAPA+INDISPON%C3%8DVEL";
+
         // Dados de livros predefinidos (agora como a fonte principal de dados)
         const predefinedBooks = [
             { id: 1, title: "Adolescências, Juventudes e Participação", price: 10.00, imageUrl: "https://i.imgur.com/7expm1g.png", genre: "Sociologia", description: "Uma análise profunda e multifacetada sobre a complexidade das adolescências e juventudes na sociedade contemporânea. O livro explora como a participação ativa dos jovens molda a cultura, a política e as relações sociais, abordando temas como identidade, ativismo digital e os desafios de transição para a vida adulta. Uma leitura essencial para educadores, pesquisadores e todos interessados em compreender a dinâmica da nova geração." },
@@ -141,7 +144,18 @@
             { id: 4, title: "Gibis do Cascão", price: 30.00, imageUrl: "https://i.imgur.com/G1B0ex7.png", genre: "HQ", description: "Mergulhe no universo hilário e, sim, limpinho, do Cascão! Esta edição especial reúne as melhores e mais engraçadas histórias do personagem mais avesso à água da Turma da Mônica. Com aventuras cheias de criatividade e trapalhadas, os gibis do Cascão são uma garantia de diversão para todas as idades, provando que a amizade e a alegria podem superar qualquer medo de banho." },
             { id: 5, title: "Manoel de Barros", price: 10.00, imageUrl: "https://i.imgur.com/waPqQOz.png", genre: "Poesia", description: "Através da lente poética de Manoel de Barros, o leitor é convidado a enxergar o mundo sob uma nova luz. Este livro é uma ode à simplicidade, à natureza e à infância da linguagem. Com uma escrita que subverte as regras gramaticais e celebra a pureza dos seres e objetos, o autor nos ensina a 'desinventar' as coisas e a encontrar a poesia no lixo, no rio, no ser de cada um." },
             { id: 7, title: "O Corpo Fala", price: 20.00, imageUrl: "https://i.imgur.com/nQnznHD.png", genre: "Psicologia", description: "Um clássico da comunicação não verbal, 'O Corpo Fala' é um guia indispensável para entender as mensagens ocultas por trás de nossos gestos, posturas e expressões faciais. Repleto de ilustrações e análises detalhadas, o livro desvenda como nosso corpo reflete nossos pensamentos e emoções, permitindo-nos decifrar a nós mesmos e aos outros. Uma ferramenta poderosa para aprimorar relacionamentos pessoais e profissionais." },
-            { id: 8, title: "A Dieta Ideal", price: 15.00, imageUrl: "https://i.imgur.com/aw1TJtg.png", genre: "Saúde", description: "Em 'A Dieta Ideal', o autor desmistifica os conceitos sobre alimentação saudável e apresenta um guia prático e acessível para quem busca uma vida mais equilibrada. O livro aborda temas como nutrição consciente, a importância dos macro e micronutrientes e a criação de hábitos sustentáveis, mostrando que uma dieta ideal é aquela que se adapta ao seu corpo, não o contrário." }
+            { id: 8, title: "A Dieta Ideal", price: 15.00, imageUrl: "https://i.imgur.com/aw1TJtg.png", genre: "Saúde", description: "Em 'A Dieta Ideal', o autor desmistifica os conceitos sobre alimentação saudável e apresenta um guia prático e acessível para quem busca uma vida mais equilibrada. O livro aborda temas como nutrição consciente, a importância dos macro e micronutrientes e a criação de hábitos sustentáveis, mostrando que uma dieta ideal é aquela que se adapta ao seu corpo, não o contrário." },
+            
+            // --- INÍCIO DA TROCA SOLICITADA ---
+            // ID 9 (Jovens Empreendedores) recebe a capa de ID 10 (Tartarugas Até Lá Embaixo)
+            { id: 9, title: "Jovens Empreendedores", price: 20.00, imageUrl: "https://img.eselt.de/img/18832415_zJIi9Px4dudRPCa7/ad.jpg", genre: "Negócios", description: "Um guia prático e inspirador para a nova geração de líderes. Este livro desvenda os segredos para tirar ideias do papel, construir startups de sucesso e navegar pelos desafios do mercado. Essencial para quem busca a independência financeira e um futuro inovador." },
+            
+            // ID 10 (Tartarugas Até Lá Embaixo) recebe a capa que era de ID 9 (a capa original de Morte Súbita)
+            { id: 10, title: "Tartarugas Até Lá Embaixo", price: 20.00, imageUrl: "https://img.eselt.de/img/18832413_UIqnEn5U4Yqu6qNX/ad.jpg", genre: "Young Adult", description: "Um romance sensível e profundo de John Green que explora a ansiedade, a amizade e a busca pela identidade. A protagonista Aza Holmes lida com o peso de seus pensamentos obsessivos enquanto investiga o desaparecimento de um bilionário local. Uma obra comovente sobre saúde mental e o que significa estar vivo." },
+            
+            // ID 11 (Morte Súbita) - Permanece com a capa original de Jovens Empreendedores (após a primeira troca)
+            { id: 11, title: "Morte Súbita", price: 15.00, imageUrl: "https://img.eselt.de/img/18832414_ZsDnOfjE8LiaObci/ad.jpg", genre: "Thriller", description: "Um thriller psicológico eletrizante que se passa em uma pequena comunidade após a morte inesperada de uma figura proeminente. Segredos são revelados e rivalidades vêm à tona, enquanto a verdade por trás do evento 'súbito' se mostra muito mais sombria e complexa. Uma leitura viciante para fãs de mistério." }
+             // --- FIM DA TROCA SOLICITADA ---
         ];
 
         // Referências aos elementos do DOM
